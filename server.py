@@ -50,6 +50,17 @@ def prompt_approval(action_name: str, payload: dict) -> bool:
         print(f"\nError reading input: {e}. Rejecting.")
         return False
 
+@app.get("/")
+def read_root():
+    return {
+        "status": "online",
+        "message": "Google MCP Server is running.",
+        "endpoints": [
+            "/append_to_doc",
+            "/create_email_draft"
+        ]
+    }
+
 @app.post("/append_to_doc")
 def api_append_to_doc(request: AppendDocRequest):
     payload = request.model_dump()
