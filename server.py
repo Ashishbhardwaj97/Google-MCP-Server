@@ -56,10 +56,15 @@ def read_root():
         "status": "online",
         "message": "Google MCP Server is running.",
         "endpoints": [
+            "/health",
             "/append_to_doc",
             "/create_email_draft"
         ]
     }
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
 
 @app.post("/append_to_doc")
 def api_append_to_doc(request: AppendDocRequest):
