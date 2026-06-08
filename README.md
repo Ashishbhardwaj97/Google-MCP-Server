@@ -1,6 +1,7 @@
-# Google MCP Server
+# Google-MCP-Server
 
-A FastAPI application that integrates with Google Docs and Gmail, following MCP style.
+A lightweight, Python-based Model Context Protocol (MCP) server that securely integrates with Google Workspace using FastAPI and OAuth 2.0.
+
 It uses Google OAuth 2.0 to access the user's Docs and Gmail accounts to:
 - Append text to a Google Doc.
 - Create a Gmail draft.
